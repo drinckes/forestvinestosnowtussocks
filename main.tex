@@ -129,7 +129,7 @@
 \newcommand{\hairsp}{\hspace{1pt}}% hair space
 \newcommand{\hquad}{\hskip0.5em\relax}% half quad space
 \newcommand{\ie}{\textit{i.\hairsp{}e.}\xspace}
-\newcommand{\eg}{\textit{e.\hairsp{}g.}\xspace}
+\newcommand{\eg}[0]{\textit{e.\hairsp{}g.}\xspace}
 % Macro for the correct accent for Hawai'i
 \DeclareRobustCommand{\okina}{%
   \raisebox{\dimexpr\fontcharht\font`A-\height}{%
@@ -141,7 +141,7 @@
 %% START OF DOCUMENT
 \begin{document}
 % Prevent words extending past the margins.
-\raggedright
+\raggedright\
 
 \edef\marginnotetextwidth{\the\textwidth}
 
@@ -155,7 +155,7 @@
       \begin{raggedright}
         % \itshape
         \fontsize{24}{30}\selectfont
-        {\@author \par}
+        {\@author\ \par}
         \vfill
         {\fontsize{44}{55}\selectfont Forest Vines to Snow Tussocks\par}
         {\scshape \sffamily The Story of New Zealand Plants \par}
@@ -163,7 +163,7 @@
         \vfill
         \vskip 3em
       \end{raggedright}\par
-      \vfil\null
+      \vfil\null\
 }
 \makeatother
 
@@ -174,20 +174,20 @@
 
 \subfile{copyright}
 
-\cleardoublepage
+\cleardoublepage\
 \tableofcontents
 \listoffigures
-\cleardoublepage
+\cleardoublepage\
 
 \subfile{preface}
 
-\mainmatter
+\mainmatter\
 
 \subfile{book}
 
 % The back matter contains appendices, bibliographies, indices, glossaries, etc.
 
-\backmatter
+\backmatter\
 
 \printbibliography[heading=bibintoc]
 
