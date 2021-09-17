@@ -82,6 +82,8 @@
 \fancyhead[LE,RO]{\sffamily\itshape\thepage}
 \fancyfoot{}
 \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
+% Increase header height.
+\setlength{\headheight}{25pt}
 
 % TEXT LAYOUT
 % Tables
@@ -140,8 +142,6 @@
 %% END OF CONFIGURATION
 %% START OF DOCUMENT
 \begin{document}
-% Prevent words extending past the margins.
-\raggedright\
 
 \edef\marginnotetextwidth{\the\textwidth}
 
@@ -163,34 +163,20 @@
         \vfill
         \vskip 3em
       \end{raggedright}\par
-      \vfil\null\
+      \vfill\null\
 }
 \makeatother
-
-% Copyright page
-\newpage
-
-~\vfill
-
+\clearpage
 \subfile{copyright}
-
-\cleardoublepage\
+\cleardoublepage%
 \tableofcontents
-\listoffigures
-\cleardoublepage\
-
+\cleardoublepage%
 \subfile{preface}
-
-\mainmatter\
-
+\mainmatter%
 \subfile{book}
-
 % The back matter contains appendices, bibliographies, indices, glossaries, etc.
-
-\backmatter\
-
+\backmatter%
 \printbibliography[heading=bibintoc]
-
 % Set the heading otherwise the previous chapter heading leaks.
 \markboth{Index}{Index}
 \printindex
