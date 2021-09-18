@@ -50,7 +50,16 @@
 % URL support, use sans font for urls
 \usepackage{url}
 \urlstyle{sf}
-% Italicise an entry in the text and add it to the index.
+% Italicise a botanic name in the text and add it to the index.
+% Optional arguments allow the name to be divided in the index, and have a
+% different appearance to the text.
+% \BotanicRef{Nothofagus} - both the text and index entry are Nothofagus
+% \BotanicRef{N. menziesii}[Nothofagus][menziesii] - the text uses N. menziesii,
+%     and the index is Nothofagus!menziesii.
+\usepackage{xparse}
+\DeclareDocumentCommand\BotanicRef{ m O{#1} o } {%
+    \emph{#1}\index{\emph{#2}\IfNoValueF{#3}{!\emph{#3}}}%
+}
 % \itindex{Nothofagus}
 % \itindex[australis]{Agathis}
 \newcommand*{\itindex}[2][]{\textit{#2\ifx#1\empty\else{ #1}\fi}\index{#2@\textit{#2}\ifx#1\empty\else!\textit{#1}\fi}}
