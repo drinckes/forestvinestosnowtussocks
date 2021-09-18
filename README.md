@@ -6,9 +6,9 @@ This is the latex source for the book *From Forest Vines To Snow Tussocks* by Jo
 
 It has been converted from the source in the [New Zealand Electronic Text Collection](http://nzetc.victoria.ac.nz/tm/scholarly/tei-DawFore.html), made available by Victoria University of Wellington under the [Creative Commons Attribution-Share Alike 3.0 New Zealand Licence](http://nzetc.victoria.ac.nz/tm/scholarly/tei-NZETC-About-copyright.html#ccbysa).
 
-## Workflows
+## Changes To The Book
 
-A GitHub action has been added to perform lint checks.
+The aim is for a Latex conversion of the book, not a new book, so I've made few changes other than fixing some typos or scanos (e.g., *Nothojagus* has been replaced with *Nothofagus*), and expanding the scientific names in the text, so that it has *Nothfagus menziesii* instead of *N. menziesii*, and to use sub-entries in the index, with the genus as the top level.
 
 ## Book Production
 
@@ -25,8 +25,6 @@ You should be able to generate the book by running:
 latexmk main
 ```
 
-## Changes To The Book
+## Workflows
 
-The aim is for a Latex conversion of the book, not a new book, so I've made very few changes other than fixing some typos or errors from earlier conversion processes (e.g., *Nothojagus* instead of *Nothofagus*).
-
-However I did decide to expand all the scientific names in the text, using *Nothfagus menziesii* instead of *N. menziesii*, and to use sub-entries in the index, using the genus as the top level.
+A GitHub action has been added to perform lint checks.
