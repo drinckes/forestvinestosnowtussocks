@@ -24,3 +24,9 @@ You should be able to generate the book by running:
 ```shell
 latexmk main
 ```
+
+## Changes To The Book
+
+The aim is for a Latex conversion of the book, not a new book, so I've made very few changes other than fixing some typos or errors from earlier conversion processes (e.g., *Nothojagus* instead of *Nothofagus*).
+
+However I did decide to expand all the scientific names in the text, using *Nothfagus menziesii* instead of *N. menziesii*, and to use sub-entries in the index, using the genus as the top level.
