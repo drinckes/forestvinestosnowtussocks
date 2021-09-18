@@ -17,7 +17,7 @@ Install [TeX Live](https://www.tug.org/texlive/). You may also need to separatel
 [binaries](https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/current/binaries/).
 
 The fonts used in the text are [EB Garamond](https://www.ctan.org/pkg/ebgaramond) and
-[Biolinum](https://www.ctan.org/pkg/libertine), and in the SVGs [Roboto Condensed Light 300](https://fonts.google.com/specimen/Roboto+Condensed).
+[Biolinum](https://www.ctan.org/pkg/libertine).
 
 You should be able to generate the book by running:
 
