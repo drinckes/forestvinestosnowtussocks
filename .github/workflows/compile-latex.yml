@@ -24,7 +24,7 @@ jobs:
         root_file: |
           main.tex
     - name: Move generated PDF files into out/
-      run: mkdir -p /out && mv main.pdf out/
+      run: mkdir -p out && mv main.pdf out/
     # Upload generated PDFs to repo.
     - name: Commit cover and main PDFs to repo
       uses: github-actions-x/commit@v2.7
