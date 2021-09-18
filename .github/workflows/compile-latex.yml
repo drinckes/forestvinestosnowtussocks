@@ -4,6 +4,10 @@ name: Compile-LateX
  
 on:
  # Run on pushes into the main branch
+  workflow_run:
+    workflows: [ test-client, test-server ]
+    branches: [ main ]
+    types: [ completed ]
   push:
     branches:
      - main
@@ -27,10 +31,11 @@ jobs:
       run: mkdir -p out && mv main.pdf out/
     # Upload generated PDFs to repo.
     - name: Commit cover and main PDFs to repo
-      uses: github-actions-x/commit@v2.7
+      uses: github-actions-x/commit@v2.8
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: 'automatically updated by workflow action'
+        push-branch: 'main'
         force-add: 'true'
         files: out/main.pdf
         name: 'auto'
