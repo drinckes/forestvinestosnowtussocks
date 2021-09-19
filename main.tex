@@ -124,8 +124,9 @@
 % Figure referencing. Can also use \nameref*{#1} to get the figure name. 
 \newcommand{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1}}}
 \newcommand{\figureref}[1]{\marginnote{\emph{See #1}}}
-% Allow multiple footnotes.
-\usepackage[multiple]{footmisc}
+% Place footnotes at the bottom of the page (i.e., not directly under text, as we use \raggedbottom),
+% and provide commas between the references if there are multiple footnotes.
+\usepackage[bottom,multiple]{footmisc}
 % Force content to next left page. Use this to force content to face a chapter.
 \newcommand*\cleartoleftpage{%
   \clearpage
@@ -151,6 +152,8 @@
 %% END OF CONFIGURATION
 %% START OF DOCUMENT
 \begin{document}
+% Don't expand text to fill the page.
+\raggedbottom\
 
 \edef\marginnotetextwidth{\the\textwidth}
 
