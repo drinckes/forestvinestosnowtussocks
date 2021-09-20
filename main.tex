@@ -115,6 +115,8 @@
 % Set spacing between list items.
 \usepackage{enumitem}
 \setlist{itemsep=0.5ex,parsep=0ex}
+% And set the style of the label in \begin{description} lists.
+\setlist[description]{font=\normalfont\itshape}% chktex 6
 % Use marginnote package, redefine \footnote to use this. It works better than \footnotesinmargin for
 % footnotes (citations) within tables and captions, and looks better than memoir's \marginpar.
 % Yes it's unmaintained, when it breaks go back to footnotesinmargin and deal with it.
