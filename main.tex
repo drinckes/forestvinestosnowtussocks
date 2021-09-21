@@ -45,6 +45,7 @@
 % Index creation
 \usepackage{imakeidx}
 \makeindex[columns=2, title=Index, intoc]
+\indexsetup{othercode=\small}
 % Refer to sections using their name, not just number
 \usepackage{hyperref}
 % URL support, use sans font for urls
@@ -58,13 +59,11 @@
 %     and the index is Nothofagus!menziesii.
 \usepackage{xparse}
 \DeclareDocumentCommand\BotanicRef{ m O{#1} o } {%
-    \emph{#1}\index{\emph{#2}\IfNoValueF{#3}{!\emph{#3}}}%
+    \emph{#1}\index{#2@\emph{#2}\IfNoValueF{#3}{!\emph{#3}}}%
 }
-% \itindex{Nothofagus}
-% \itindex[australis]{Agathis}
-\newcommand*{\itindex}[2][]{\textit{#2\ifx#1\empty\else{ #1}\fi}\index{#2@\textit{#2}\ifx#1\empty\else!\textit{#1}\fi}}
-% Include an entry in the text and in the index.
-\newcommand*{\nameindex}[2][]{#2\ifx#1\empty\else{ #1}\fi\index{#2\ifx#1\empty\else{ #1}\fi}}
+% Add a plain entry to the text and index.
+% Optional second argument is the \index{} text.
+\DeclareDocumentCommand\IDX{ m O{#1} } {{#1}\index{#2}}
 
 % FIGURES
 % Get a side captioned figure (SCfigure) and set the caption style.
