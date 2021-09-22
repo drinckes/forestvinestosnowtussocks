@@ -69,10 +69,16 @@
 % Get a side captioned figure (SCfigure) and set the caption style.
 \usepackage[outercaption]{sidecap}
 \sidecaptionvpos{figure}{t}
-\usepackage[font={small,it},labelfont=bf]{caption}
+\usepackage[font={footnotesize,it},labelfont=bf]{caption}
 \usepackage{graphicx}
 % Provides the wrapfig environment.
 \usepackage{wrapfig}
+% Allow using expressions in dimensions to e.g. minipage etc.
+\usepackage{calc}
+% Define a length for the inter-figure gap, used by the minipage
+% layout.
+\newlength{\fgap}
+\setlength{\fgap}{2mm}
 
 % Prints a trailing space in a smart way.
 \usepackage{xspace}
@@ -100,11 +106,8 @@
 % TEXT LAYOUT
 % Tables
 % Better tables - span pages, allow auto-sizing multi-line columns and page breaks.
-\usepackage{xltabular}
+\usepackage{longtable}
 \usepackage{booktabs}
-% Define a column type, R, that is the same as X but ragged right, and C which is centered
-\usepackage{array}\newcolumntype{R}{>{\raggedright\arraybackslash}X}
-\usepackage{array}\newcolumntype{C}{>{\centering\arraybackslash}X}
 % CHAPTER AND SECTION STYLES
 % We don't use titlesec because it doesn't handle multiple footnotes in
 % the same heading. See https://github.com/jbezos/titlesec/issues/43
