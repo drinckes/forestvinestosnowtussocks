@@ -106,11 +106,8 @@
 % TEXT LAYOUT
 % Tables
 % Better tables - span pages, allow auto-sizing multi-line columns and page breaks.
-\usepackage{xltabular}
+\usepackage{longtable}
 \usepackage{booktabs}
-% Define a column type, R, that is the same as X but ragged right, and C which is centered
-\usepackage{array}\newcolumntype{R}{>{\raggedright\arraybackslash}X}
-\usepackage{array}\newcolumntype{C}{>{\centering\arraybackslash}X}
 % CHAPTER AND SECTION STYLES
 % We don't use titlesec because it doesn't handle multiple footnotes in
 % the same heading. See https://github.com/jbezos/titlesec/issues/43
