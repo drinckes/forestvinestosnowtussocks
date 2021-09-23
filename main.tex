@@ -10,10 +10,10 @@
 % Geometry - set the page size etc.
 \usepackage{geometry}
 \geometry{
-	papersize={193mm,260mm},
+	papersize={178mm,254mm},
 	outer=4cm,
 	inner=2cm,
-	textheight=200mm,
+	%textheight=200mm,
 	marginparwidth=3cm,
 	marginparsep=3mm
 }
@@ -47,6 +47,9 @@
 \usepackage{longtable}
 % Add the \toprule etc commands.
 \usepackage{booktabs}
+% Get the \thead command so we can have multi-line headings.
+\usepackage{makecell}
+\renewcommand\theadfont{\normalfont}
 %
 % CHAPTER AND SECTION STYLES
 % titlesec can't handle multiple footnotes in one heading.
@@ -103,7 +106,7 @@
 % Chapter and section names in the header to upper case.
 \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
 % Increase header height.
-\setlength{\headheight}{25pt}
+\setlength{\headheight}{16pt}
 
 % BIBLIOGRAPHY, INDEX, REFERENCES AND URLs
 %
@@ -171,16 +174,18 @@
 \makeatletter
 {
 	\thispagestyle{empty}
+	\newgeometry{right=2cm}
 	\begin{raggedright}
 		\fontsize{24}{30}\selectfont
 		\hspace{0pt}
 		\vfill
-		{\fontsize{44}{55}\selectfont \sffamily FOREST VINES \emph{to}\par SNOW TUSSOCKS\par}
+		{\fontsize{40}{50}\selectfont \sffamily FOREST VINES \emph{to}\par SNOW TUSSOCKS\par}
 		\vspace{1em}
 		{\scshape \sffamily The Story of New Zealand Plants \par}
-		\vspace{8em}
+		\vspace{4em}
 		{\@author\ \par}
 	\end{raggedright}
+	\restoregeometry%
 }
 \makeatother
 \clearpage
