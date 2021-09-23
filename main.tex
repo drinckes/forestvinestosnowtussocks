@@ -10,12 +10,12 @@
 % Geometry - set the page size etc.
 \usepackage{geometry}
 \geometry{
-  papersize={193mm,260mm},
-  outer=4cm,
-  inner=2cm,
-  textheight=200mm,
-  marginparwidth=3cm,
-  marginparsep=3mm
+	papersize={193mm,260mm},
+	outer=4cm,
+	inner=2cm,
+	textheight=200mm,
+	marginparwidth=3cm,
+	marginparsep=3mm
 }
 % Load fonts
 \usepackage[T1]{fontenc}
@@ -25,53 +25,58 @@
 \usepackage{biolinum}
 % Allow using arbitrary font sizes - needed for the title page
 \usepackage{anyfontsize}
-% Subfiles - for the chapters
+% Break the LaTeX source into multiple files.
 \usepackage{subfiles}
 
-% REFERENCES
-% Bibliography, index, references and URLs.
+% TEXT LAYOUT
 %
-% Bibliography and citations - verbose (no Ibid). We'll configure citations to use the margins later and just use \cite.
-\usepackage[style=verbose]{biblatex}
-\addbibresource{bibliography.bib}
-% Use nocite to include all the references from references.bib.
-\nocite{allan1961, cockayne1928, cockayne1965, cooper1981, crookes1963, given1981,
-        heath1974, johns1983, mark1979, moore1970, moore1978, poole1979, salmon1985,
-        salmon1980, sampson1985}
-\addbibresource{references.bib}
-\DefineBibliographyStrings{english}{%
-  bibliography = {References},
-}
-% Index creation
-\usepackage{imakeidx}
-\makeindex[columns=2, title=Index, intoc]
-\indexsetup{othercode=\small}
-% Refer to sections using their name, not just number
-\usepackage{hyperref}
+% Set paragraph spacing.
+\setlength{\parskip}{0.6em}
+% Reduce spacing between list items.
+\usepackage{enumitem}
+\setlist{itemsep=0.5ex,parsep=0ex}
+% And set the style of the label in \begin{description} lists.
+\setlist[description]{font=\normalfont\itshape}% chktex 6
+% Prints a trailing space in a smart way.
+\usepackage{xspace}
+% Allow for number and unit formatting. Default to use text fontst.
+\usepackage[mode=text]{siunitx}
+%
+% TABLES
+% Long tables that span pages.
+\usepackage{longtable}
+% Add the \toprule etc commands.
+\usepackage{booktabs}
+%
+% CHAPTER AND SECTION STYLES
+% titlesec can't handle multiple footnotes in one heading.
+% See https://github.com/jbezos/titlesec/issues/43
+% Instead use sectsty and define the style for the headings.
+\usepackage{sectsty}
+\allsectionsfont{\mdseries\sffamily\itshape\raggedright}% chktex 6
+%
+% FOOT/MARGIN NOTES
+% We're going to put figure references into the margins. We could use \marginpar
+% but it has restrictions (e.g., can't be used inside a figure caption), so
+% we'll use marginnote instead.
+\usepackage{marginnote}
+\newcommand{\figureref}[1]{\marginnote{\small \itshape See #1}}% chktex 1 6
+% Place footnotes at the bottom of the page (i.e., not directly under text, as
+% we use \raggedbottom), and provide commas between the references if there are
+% multiple footnotes.
+\usepackage[bottom,multiple]{footmisc}
 % URL support, use sans font for urls
 \usepackage{url}
 \urlstyle{sf}
-% Italicise a botanic name in the text and add it to the index.
-% Optional arguments allow the name to be divided in the index, and have a
-% different appearance to the text.
-% \BotanicRef{Nothofagus} - both the text and index entry are Nothofagus
-% \BotanicRef{N. menziesii}[Nothofagus][menziesii] - the text uses N. menziesii,
-%     and the index is Nothofagus!menziesii.
-\usepackage{xparse}
-\DeclareDocumentCommand\BotanicRef{ m O{#1} o } {%
-    \emph{#1}\index{#2@\emph{#2}\IfNoValueF{#3}{!\emph{#3}}}%
-}
-% Add a plain entry to the text and index.
-% Optional second argument is the \index{} text.
-\DeclareDocumentCommand\IDX{ m O{#1} } {{#1}\index{#2}}
 
 % FIGURES
+%
+\usepackage{graphicx}
 % Get a side captioned figure (SCfigure) and set the caption style.
 \usepackage[outercaption]{sidecap}
 \sidecaptionvpos{figure}{t}
 \usepackage[font={footnotesize,it},labelfont=bf]{caption}
-\usepackage{graphicx}
-% Provides the wrapfig environment.
+% Allow for figures with text wrapped around them.
 \usepackage{wrapfig}
 % Allow using expressions in dimensions to e.g. minipage etc.
 \usepackage{calc}
@@ -80,81 +85,77 @@
 \newlength{\fgap}
 \setlength{\fgap}{2mm}
 
-% Prints a trailing space in a smart way.
-\usepackage{xspace}
-% Allow for number and unit formatting. Default to use text fontst.
-\usepackage[mode=text]{siunitx}
-
-% HEADER AND FOOTER STYLES
+% PAGE HEADERS AND FOOTERS
+%
 \usepackage{fancyhdr}
 % Suppress page numbers on chapter pages.
 \fancypagestyle{plain}{%
-  \renewcommand{\headrulewidth}{0pt}%
-  \fancyhf{}%
+	\renewcommand{\headrulewidth}{0pt}%
+	\fancyhf{}%
 }
 \pagestyle{fancy}
 \fancyhf{}
+\fancyfoot{}
 \fancyhead[RE]{\sffamily\itshape\leftmark}% chktex 6
 \fancyhead[LO]{\sffamily\itshape\rightmark}% chktex 6
-% Page number
+% Page number in the header.
 \fancyhead[LE,RO]{\sffamily\itshape\thepage}% chktex 6
-\fancyfoot{}
+% Chapter and section names in the header to upper case.
 \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
 % Increase header height.
 \setlength{\headheight}{25pt}
 
-% TEXT LAYOUT
-% Tables
-% Better tables - span pages, allow auto-sizing multi-line columns and page breaks.
-\usepackage{longtable}
-\usepackage{booktabs}
-% CHAPTER AND SECTION STYLES
-% We don't use titlesec because it doesn't handle multiple footnotes in
-% the same heading. See https://github.com/jbezos/titlesec/issues/43
-% Instead we'll define some custom commands.
-\usepackage{sectsty}
-\allsectionsfont{\mdseries\sffamily\itshape\raggedright}% chktex 6
-% Set paragraph spacing.
-\setlength{\parskip}{0.6em}
-% Set spacing between list items.
-\usepackage{enumitem}
-\setlist{itemsep=0.5ex,parsep=0ex}
-% And set the style of the label in \begin{description} lists.
-\setlist[description]{font=\normalfont\itshape}% chktex 6
-% Use marginnote package, redefine \footnote to use this. It works better than \footnotesinmargin for
-% footnotes (citations) within tables and captions, and looks better than memoir's \marginpar.
-% Yes it's unmaintained, when it breaks go back to footnotesinmargin and deal with it.
-% We use this for captions, citations, footnotes, marginal notes and margin figures as well.
-% MARGINAL NOTES
-% We're going to put figure references into the margins.
-\usepackage{marginnote}
-\renewcommand*{\marginfont}{\footnotesize}
+% BIBLIOGRAPHY, INDEX, REFERENCES AND URLs
+%
+% Bibliography.
+\usepackage[style=verbose]{biblatex}
+\DefineBibliographyStrings{english}{%
+	bibliography = {References},
+}
+% Cited documents.
+\addbibresource{bibliography.bib}
+% Documents that aren't cited in the text but included as reference.
+\addbibresource{references.bib}
+\nocite{allan1961, cockayne1928, cockayne1965, cooper1981, crookes1963,
+	given1981, heath1974, johns1983, mark1979, moore1970, moore1978, poole1979,
+	salmon1985, salmon1980, sampson1985}
+%
+% Index creation
+\usepackage{imakeidx}
+\makeindex[columns=2, title=Index, intoc]
+\indexsetup{othercode=\small}
+% Italicise a botanic name in the text and add it to the index.
+% Optional arguments allow the name to be divided in the index, and have a
+% different appearance to the text.
+% \BotanicRef{Nothofagus} - both the text and index entry are Nothofagus
+% \BotanicRef{N. menziesii}[Nothofagus][menziesii] - the text uses N. menziesii,
+%     and the index is Nothofagus!menziesii.
+\usepackage{xparse}
+\DeclareDocumentCommand\BotanicRef{ m O{#1} o } {%
+	\emph{#1}\index{#2@\emph{#2}\IfNoValueF{#3}{!\emph{#3}}}%
+}
+% Add a plain entry to the text and index.
+% Optional second argument is the \index{} text.
+\DeclareDocumentCommand\IDX{ m O{#1} } {{#1}\index{#2}}
+%
+% Turn references into hyperlinks.
+\usepackage{hyperref}
 % Figure referencing. Can also use \nameref*{#1} to get the figure name. 
 \newcommand{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1}}}
-\newcommand{\figureref}[1]{\marginnote{\emph{See #1}}}
-% Place footnotes at the bottom of the page (i.e., not directly under text, as we use \raggedbottom),
-% and provide commas between the references if there are multiple footnotes.
-\usepackage[bottom,multiple]{footmisc}
-% Force content to next left page. Use this to force content to face a chapter.
-\newcommand*\cleartoleftpage{%
-  \clearpage
-  \ifodd\value{page}\hbox{}\newpage\fi
-}
 
 % MISC
 % Macros for typesetting the documentation
-\usepackage{xcolor}
-\newcommand{\correction}[1]{\textcolor{red}{#1}}
-% \newcommand{\hangleft}[1]{\makebox[0pt][r]{#1}}
 \newcommand{\hairsp}{\hspace{1pt}}% hair space
 \newcommand{\hquad}{\hskip0.5em\relax}% half quad space
-\newcommand{\ie}{\textit{i.\hairsp{}e.}\xspace}
 \newcommand{\eg}[0]{\textit{e.\hairsp{}g.}\xspace}
 % Macro for the correct accent for Hawai'i
 \DeclareRobustCommand{\okina}{%
-  \raisebox{\dimexpr\fontcharht\font`A-\height}{%
-    \scalebox{0.8}{`}%
-  }%
+	\raisebox{\dimexpr\fontcharht\font`A-\height}{\scalebox{0.8}{`}}%
+}
+% Force content to next left page. Use this to force content to face a chapter.
+\newcommand*\cleartoleftpage{%
+	\clearpage
+	\ifodd\value{page}\hbox{}\newpage\fi
 }
 
 %% END OF CONFIGURATION
@@ -164,23 +165,23 @@
 \raggedbottom%
 
 % Front matter
-\frontmatter
+\frontmatter%
 
 % Custom title page
 \makeatletter
 {
-    \thispagestyle{empty}
-      \begin{raggedright}
-        \fontsize{24}{30}\selectfont
-        {\@author\ \par}
-        \vfill
-        {\fontsize{44}{55}\selectfont Forest Vines to Snow Tussocks\par}
-        {\scshape \sffamily The Story of New Zealand Plants \par}
-        \vfill
-        \vfill
-        \vskip 3em
-      \end{raggedright}\par
-      \vfill\null\
+	\thispagestyle{empty}
+	\begin{raggedright}
+		\fontsize{24}{30}\selectfont
+		{\@author\ \par}
+		\vfill
+		{\fontsize{44}{55}\selectfont Forest Vines to Snow Tussocks\par}
+		{\scshape \sffamily The Story of New Zealand Plants \par}
+		\vfill
+		\vfill
+		\vskip 3em
+	\end{raggedright}\par
+	\vfill\null\
 }
 \makeatother
 \clearpage
