@@ -13,9 +13,9 @@
 	papersize={178mm,254mm},
 	outer=4cm,
 	inner=2cm,
-	%textheight=200mm,
+	bottom=3cm,
 	marginparwidth=3cm,
-	marginparsep=3mm
+	marginparsep=3mm,
 }
 % Load fonts
 \usepackage[T1]{fontenc}
@@ -99,14 +99,13 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyfoot{}
-\fancyhead[RE]{\sffamily\itshape\leftmark}% chktex 6
-\fancyhead[LO]{\sffamily\itshape\rightmark}% chktex 6
+\fancyhead[RE]{\small\sffamily\itshape\leftmark}% chktex 6
+\fancyhead[LO]{\small\sffamily\itshape\rightmark}% chktex 6
 % Page number in the header.
-\fancyhead[LE,RO]{\sffamily\itshape\thepage}% chktex 6
-% Chapter and section names in the header to upper case.
-\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
-% Increase header height.
-\setlength{\headheight}{16pt}
+\fancyhead[LE,RO]{\small\sffamily\itshape\thepage}% chktex 6
+% Just include the name, not "Chapter x".
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
 
 % BIBLIOGRAPHY, INDEX, REFERENCES AND URLs
 %
@@ -174,7 +173,7 @@
 \makeatletter
 {
 	\thispagestyle{empty}
-	\newgeometry{right=2cm}
+	\newgeometry{right=2cm,bottom=3cm}
 	\begin{raggedright}
 		\fontsize{24}{30}\selectfont
 		\hspace{0pt}
