@@ -1,8 +1,8 @@
-# From Forest Vines To Snow Tussocks
+# Forest Vines To Snow Tussocks
 
 [![lint status](https://github.com/drinckes/forestvinestosnowtussocks/workflows/Super-Linter/badge.svg)](https://github.com/drinckes/forestvinestosnowtussocks/actions?query=workflow%3ASuper-Linter)
 
-This is the latex source for the book *From Forest Vines To Snow Tussocks* by John Dawson.
+This is the latex source for the book *Forest Vines To Snow Tussocks* by John Dawson.
 
 It has been converted from the source in the [New Zealand Electronic Text Collection](http://nzetc.victoria.ac.nz/tm/scholarly/tei-DawFore.html), made available by Victoria University of Wellington under the [Creative Commons Attribution-Share Alike 3.0 New Zealand Licence](http://nzetc.victoria.ac.nz/tm/scholarly/tei-NZETC-About-copyright.html#ccbysa).
 
