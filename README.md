@@ -1,6 +1,7 @@
 # Forest Vines To Snow Tussocks
 
 [![lint status](https://github.com/drinckes/forestvinestosnowtussocks/workflows/Super-Linter/badge.svg)](https://github.com/drinckes/forestvinestosnowtussocks/actions?query=workflow%3ASuper-Linter)
+[![latex compilation status](https://github.com/drinckes/forestvinestosnowtussocks/workflows/Compile-LateX/badge.svg)](https://github.com/drinckes/forestvinestosnowtussocks/actions?query=workflow%3ACompile-LateX)
 
 This is the latex source for the book *Forest Vines To Snow Tussocks* by John Dawson.
 
