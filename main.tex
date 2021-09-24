@@ -11,10 +11,10 @@
 \usepackage{geometry}
 \geometry{
 	papersize={178mm,254mm},
-	outer=3.5cm,
+	outer=3cm,
 	inner=2cm,
 	bottom=3cm,
-	marginparwidth=2.5cm,
+	marginparwidth=2cm,
 	marginparsep=3mm,
 }
 % Load fonts
@@ -39,6 +39,8 @@
 \setlist[description]{font=\normalfont\itshape}% chktex 6
 % Prints a trailing space in a smart way.
 \usepackage{xspace}
+% Improve line formatting and reduce hyphenation.
+\usepackage{microtype}
 % Allow for number and unit formatting. Default to use text fontst.
 \usepackage[mode=text]{siunitx}
 %
@@ -63,7 +65,8 @@
 % but it has restrictions (e.g., can't be used inside a figure caption), so
 % we'll use marginnote instead.
 \usepackage{marginnote}
-\newcommand{\figureref}[1]{\marginnote{\small \itshape See #1}}% chktex 1 6
+\newcommand{\figureref}[1]{\marginnote{\small \itshape #1}}% chktex 1 6
+%\newcommand{\figureref}[1]{(See #1)}% chktex 1 6
 % Place footnotes at the bottom of the page (i.e., not directly under text, as
 % we use \raggedbottom), and provide commas between the references if there are
 % multiple footnotes.
