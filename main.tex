@@ -10,12 +10,12 @@
 % Geometry - set the page size etc.
 \usepackage{geometry}
 \geometry{
-	papersize={193mm,260mm},
-	outer=4cm,
+	papersize={178mm,254mm},
+	outer=3cm,
 	inner=2cm,
-	textheight=200mm,
-	marginparwidth=3cm,
-	marginparsep=3mm
+	bottom=3cm,
+	marginparwidth=2cm,
+	marginparsep=3mm,
 }
 % Load fonts
 \usepackage[T1]{fontenc}
@@ -39,6 +39,8 @@
 \setlist[description]{font=\normalfont\itshape}% chktex 6
 % Prints a trailing space in a smart way.
 \usepackage{xspace}
+% Improve line formatting and reduce hyphenation.
+\usepackage{microtype}
 % Allow for number and unit formatting. Default to use text fontst.
 \usepackage[mode=text]{siunitx}
 %
@@ -47,6 +49,9 @@
 \usepackage{longtable}
 % Add the \toprule etc commands.
 \usepackage{booktabs}
+% Get the \thead command so we can have multi-line headings.
+\usepackage{makecell}
+\renewcommand\theadfont{\normalfont}
 %
 % CHAPTER AND SECTION STYLES
 % titlesec can't handle multiple footnotes in one heading.
@@ -60,7 +65,8 @@
 % but it has restrictions (e.g., can't be used inside a figure caption), so
 % we'll use marginnote instead.
 \usepackage{marginnote}
-\newcommand{\figureref}[1]{\marginnote{\small \itshape See #1}}% chktex 1 6
+\newcommand{\figureref}[1]{\marginnote{\small \itshape #1}}% chktex 1 6
+%\newcommand{\figureref}[1]{(See #1)}% chktex 1 6
 % Place footnotes at the bottom of the page (i.e., not directly under text, as
 % we use \raggedbottom), and provide commas between the references if there are
 % multiple footnotes.
@@ -96,14 +102,13 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyfoot{}
-\fancyhead[RE]{\sffamily\itshape\leftmark}% chktex 6
-\fancyhead[LO]{\sffamily\itshape\rightmark}% chktex 6
+\fancyhead[RE]{\small\sffamily\itshape\leftmark}% chktex 6
+\fancyhead[LO]{\small\sffamily\itshape\rightmark}% chktex 6
 % Page number in the header.
-\fancyhead[LE,RO]{\sffamily\itshape\thepage}% chktex 6
-% Chapter and section names in the header to upper case.
-\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
-% Increase header height.
-\setlength{\headheight}{25pt}
+\fancyhead[LE,RO]{\small\sffamily\itshape\thepage}% chktex 6
+% Just include the name, not "Chapter x".
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
 
 % BIBLIOGRAPHY, INDEX, REFERENCES AND URLs
 %
@@ -171,16 +176,18 @@
 \makeatletter
 {
 	\thispagestyle{empty}
+	\newgeometry{right=2cm,bottom=3cm}
 	\begin{raggedright}
 		\fontsize{24}{30}\selectfont
 		\hspace{0pt}
 		\vfill
-		{\fontsize{44}{55}\selectfont \sffamily FOREST VINES \emph{to}\par SNOW TUSSOCKS\par}
+		{\fontsize{40}{50}\selectfont \sffamily FOREST VINES \emph{to}\par SNOW TUSSOCKS\par}
 		\vspace{1em}
 		{\scshape \sffamily The Story of New Zealand Plants \par}
-		\vspace{8em}
+		\vspace{4em}
 		{\@author\ \par}
 	\end{raggedright}
+	\restoregeometry%
 }
 \makeatother
 \clearpage
@@ -196,7 +203,6 @@
 % The back matter contains appendices, bibliographies, indices, glossaries, etc.
 \backmatter%
 \printbibliography[heading=bibintoc]
-\subfile{latex-notes}
 % Set the heading otherwise the previous chapter heading leaks.
 \markboth{Index}{Index}
 \printindex
