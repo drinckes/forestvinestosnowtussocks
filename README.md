@@ -11,6 +11,8 @@ It has been converted from the source in the [New Zealand Electronic Text Collec
 
 The aim is for a Latex conversion of the book, not a new book, so I've made few changes other than fixing some typos or scanos (e.g., *Nothojagus* has been replaced with *Nothofagus*), and expanding the scientific names in the text, so that it has *Nothfagus menziesii* instead of *N. menziesii*, and to use sub-entries in the index, with the genus as the top level.
 
+In addition, to aid readers from Aotearoa, Māori names for plants have been added where available.
+
 ## Book Production
 
 Install [TeX Live](https://www.tug.org/texlive/). You may also need to separately install Biber
