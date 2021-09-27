@@ -1,0 +1,97 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{calc}
+\newlength{\facewidth}
+\newlength{\faceheight}
+\newlength{\spinewidth}
+\newlength{\trimsize}
+
+\setlength{\facewidth}{182.8mm}
+\setlength{\faceheight}{260mm}
+\setlength{\trimsize}{15mm}
+% Adjust spinewidth if the page count changes.
+\setlength{\spinewidth}{20.1mm}
+
+\newlength{\stockwidth}
+\newlength{\stockheight}
+\setlength{\stockwidth}{2\facewidth+2\trimsize+\spinewidth}%
+\setlength{\stockheight}{\faceheight+2\trimsize}%
+
+\newlength{\authoroffset}
+\setlength{\authoroffset}{\facewidth+\trimsize+\spinewidth+2cm}%
+\newlength{\titleoffset}
+\setlength{\titleoffset}{\stockwidth-170mm}%
+\newlength{\descoffset}
+\setlength{\descoffset}{0.5\facewidth+\trimsize-60mm}%
+\newlength{\spineoffset}
+\setlength{\spineoffset}{\facewidth+\trimsize+0.5\spinewidth}%
+
+\usepackage[paperwidth=\stockwidth, paperheight=\stockheight, top=0cm, bottom=0cm, outer=0cm, inner=0cm]{geometry}
+
+% Load fonts
+\usepackage[T1]{fontenc}
+% Garamond Expert for roman font
+\usepackage{ebgaramond}
+% Biolinum as the sans font
+\usepackage{biolinum}
+% Allow using arbitrary font sizes.
+\usepackage{anyfontsize}
+
+% Use tikz to place the background.
+\usepackage{tikz}
+\usetikzlibrary{calc}
+% textpos allows arbitrary placement of text boxes.
+\usepackage[absolute,overlay]{textpos}
+% We need to rotate the spine text.
+\usepackage{rotating}
+
+\begin{document}
+	\color{white}%
+	\sffamily%
+	% Load the background image.
+	\begin{tikzpicture}[remember picture,overlay]
+		\node at (current page.center)
+		{\scalebox{-1}[1]{\includegraphics[height=1.0\paperheight, keepaspectratio]{racim-amr-9uKUR7TwNpU-unsplash.jpg}}};
+	\end{tikzpicture}
+
+	% Cover author and title.
+	\begin{textblock*}{150mm} (\authoroffset, 50mm) % {block width} (coords)
+		\fontsize{28}{33}\selectfont%
+		John Dawson\par
+		\vspace{14em}%
+		\raggedleft%
+		\fontsize{44}{52}\selectfont%
+		\textbf{Forest Vines}\emph{ to}\par
+		\textbf{Snow Tussocks}\par
+		\vspace{0.5em}
+		\fontsize{28}{33}\selectfont%
+		The story of New Zealand plants
+	\end{textblock*}
+
+	% Spine title and author. Use a 1pt width and reduce the spine offset by about half the font size.
+	\begin{textblock*}{1pt} (\spineoffset-7pt, 50mm)
+		\centering%
+		\begin{rotate}{-90}
+			\fontsize{18}{18}\selectfont%
+			\textbf{Forest Vines to Snow Tussocks\hspace{11em}John Dawson}
+		\end{rotate}
+	\end{textblock*}
+
+	% Back cover.
+	\begin{textblock*}{120mm} (\descoffset,60mm)
+		\Large\centering%
+		\setlength{\parskip}{1em}%
+		Forest Vines to Snow Tussocks is the first general review of the distinctive features of New Zealand native plants since Cockayne's \emph{New Zealand Plants and their Story}, now long out of print.
+
+		The plant communities, from dense lowland forest to alpine tundra, provide the book's framework, and within this many interesting and often puzzling aspects are considered: vines, epiphytes and parasites of the forest; the many peculiar shrubs with minute leaves and densely interlaced twigs; and the dense cushion plants, or `vegetable sheep', of the high mountains.
+
+		Although more than 80 percent of New Zealand's native plants are found nowhere else our flora does not stand alone, so comparisons are made with the plants of other southern lands.
+
+		In the last chapter an attempt is made to reconstruct the history of the New Zealand flora over geological time.
+
+		\emph{Forest Vines to Snow Tussocks} fills an important gap in New Zealand's botanical literature — a fascinating and invaluable book for student and general reader alike.
+		
+		\vspace{8em}%
+		{\small Cover photo by Racim Amr (https://unsplash.com/@therealracim)}
+	\end{textblock*}
+\end{document}
