@@ -9,11 +9,23 @@ It has been converted from the source in the [New Zealand Electronic Text Collec
 
 ## Changes To The Book
 
-The aim is for a Latex conversion of the book, not a new book, so I've made few changes other than fixing some typos or scanos (e.g., *Nothojagus* has been replaced with *Nothofagus*), and expanding the scientific names in the text, so that it has *Nothfagus menziesii* instead of *N. menziesii*, and to use sub-entries in the index, with the genus as the top level.
+The aim is for a LaTeX conversion of the book, not a new book, so I've made few changes other than fixing some typos or scanos (e.g., *Nothojagus* has been replaced with *Nothofagus*), and expanding the scientific names in the text, so that it has *Nothfagus menziesii* instead of *N. menziesii*, and to use sub-entries in the index, with the genus as the top level.
 
 In addition, to aid readers from Aotearoa, Māori names for plants have been added where available.
 
+## Contributing
+
+Contributions of corrections or additional information are welcomed. If you are familiar with GitHub and LaTeX, you can send me a pull request, or if you're new to GitHub, just create an issue with the information.
+
+One thing that is badly needed is replacement images. The VUW scans are low-res and in some cases quite poor, so replacements are very welcome! (Note: the images do need to be copyright-free since the book needs to be CC-BY-SA compatible.)
+
+## Workflows
+
+A GitHub action has been added to perform lint checks, and to build the cover and book PDFs (see the `out` directory).
+
 ## Book Production
+
+If you have made your own changes, you may want to generate your own PDFs.
 
 Install [TeX Live](https://www.tug.org/texlive/). You may also need to separately install Biber
 (for bibliography management) either from [source](https://github.com/plk/biber) or
@@ -26,8 +38,5 @@ You should be able to generate the book by running:
 
 ```shell
 latexmk main
+latexmk cover
 ```
-
-## Workflows
-
-A GitHub action has been added to perform lint checks.
