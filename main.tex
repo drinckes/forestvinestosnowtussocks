@@ -197,7 +197,10 @@
 \subfile{copyright}
 \cleardoublepage%
 \renewcommand{\baselinestretch}{0.5}\normalsize%
-\tableofcontents
+{ % Dirty hack to prevent the toc uppercasing its header.
+	\renewcommand{\MakeUppercase}[1]{#1}
+	\tableofcontents
+}
 \renewcommand{\baselinestretch}{1.0}\normalsize%
 \cleardoublepage%
 
@@ -219,9 +222,14 @@
 
 % The back matter contains appendices, bibliographies, indices, glossaries, etc.
 \backmatter%
-\printbibliography[heading=bibintoc]
-% Set the heading otherwise the previous chapter heading leaks.
-\markboth{Index}{Index}
-\printindex
-
+{ % Dirty hack to prevent the bibliography uppercasing its header.
+	\renewcommand{\MakeUppercase}[1]{#1}
+	\renewcommand{\bibname}{References}
+	\printbibliography[heading=bibintoc]
+}
+{ % Dirty hack to prevent the index uppercasing its header.
+	\renewcommand{\MakeUppercase}[1]{#1}
+	\printindex
+}
+\cleardoublepage%
 \end{document}
