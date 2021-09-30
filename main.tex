@@ -7,10 +7,13 @@
 % PACKAGE SECTION
 % IMPORTANT PACKAGES
 %
+% Load the page sizes.
+\input{papersize}
+%
 % Geometry - set the page size etc.
 \usepackage{geometry}
 \geometry{
-	papersize={178mm,254mm},
+	papersize={\facewidth,\faceheight},
 	outer=3cm,
 	inner=2cm,
 	bottom=3cm,
@@ -87,8 +90,6 @@
 \usepackage[font={footnotesize,it},labelfont=bf]{caption}
 % Allow for figures with text wrapped around them.
 \usepackage{wrapfig}
-% Allow using expressions in dimensions to e.g. minipage etc.
-\usepackage{calc}
 % Define a length for the inter-figure gap, used by the minipage
 % layout.
 \newlength{\fgap}

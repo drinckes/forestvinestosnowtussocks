@@ -1,30 +1,27 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-\usepackage{calc}
-\newlength{\facewidth}
-\newlength{\faceheight}
-\newlength{\spinewidth}
-\newlength{\trimsize}
 
-\setlength{\facewidth}{182.8mm}
-\setlength{\faceheight}{260mm}
-\setlength{\trimsize}{15mm}
-% Adjust spinewidth if the page count changes.
-\setlength{\spinewidth}{20.1mm}
+% Load the page sizes.
+\input{papersize}
 
 \newlength{\stockwidth}
 \newlength{\stockheight}
-\setlength{\stockwidth}{2\facewidth+2\trimsize+\spinewidth}%
-\setlength{\stockheight}{\faceheight+2\trimsize}%
+\setlength{\stockwidth}{2\coverwidth+2\covertrimsize+\coverspinewidth}%
+\setlength{\stockheight}{\coverheight+2\covertrimsize}%
 
 \newlength{\authoroffset}
-\setlength{\authoroffset}{\facewidth+\trimsize+\spinewidth+2cm}%
-\newlength{\titleoffset}
-\setlength{\titleoffset}{\stockwidth-170mm}%
+\setlength{\authoroffset}{\coverwidth+\covertrimsize+\coverspinewidth+0.1\coverwidth}%
+
+\newlength{\titlewidth}
+\setlength{\titlewidth}{0.8\coverwidth}
+
+\newlength{\descwidth}
+\setlength{\descwidth}{0.66\coverwidth}
 \newlength{\descoffset}
-\setlength{\descoffset}{0.5\facewidth+\trimsize-60mm}%
+\setlength{\descoffset}{\covertrimsize+0.5\coverwidth-0.5\descwidth}
+
 \newlength{\spineoffset}
-\setlength{\spineoffset}{\facewidth+\trimsize+0.5\spinewidth}%
+\setlength{\spineoffset}{\coverwidth+\covertrimsize+0.5\coverspinewidth}%
 
 \usepackage[paperwidth=\stockwidth, paperheight=\stockheight, top=0cm, bottom=0cm, outer=0cm, inner=0cm]{geometry}
 
@@ -55,7 +52,7 @@
 	\end{tikzpicture}
 
 	% Cover author and title.
-	\begin{textblock*}{150mm} (\authoroffset, 50mm) % {block width} (coords)
+	\begin{textblock*}{0.9\coverwidth} (\authoroffset, 50mm) % {block width} (coords)
 		\fontsize{28}{33}\selectfont%
 		John Dawson\par
 		\vspace{14em}%
@@ -78,7 +75,7 @@
 	\end{textblock*}
 
 	% Back cover.
-	\begin{textblock*}{120mm} (\descoffset,40mm)
+	\begin{textblock*}{\descwidth} (\descoffset, 40mm)
 		\Large\centering%
 		\setlength{\parskip}{1em}%
 		Forest Vines to Snow Tussocks is the first general review of the distinctive features of New Zealand native plants since Cockayne's \emph{New Zealand Plants and their Story}, now long out of print.
@@ -93,14 +90,5 @@
 		
 		\vspace{6em}%
 		{\small Cover photo by Racim Amr (https://unsplash.com/@therealracim)}
-	\end{textblock*}
-	
-	% Load the ISBN graphic.
-	\textblockcolor{white}
-	\begin{textblock*}{43.4mm} (\facewidth+\trimsize-65mm, \faceheight+\trimsize-35mm)
-		\centering%
-		\vspace{3mm}
-		\includegraphics{graphics/isbn.pdf}% 37.4x17.6mm
-		\vspace{3mm}
 	\end{textblock*}
 \end{document}
