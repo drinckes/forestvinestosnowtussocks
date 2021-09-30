@@ -9,16 +9,15 @@
 \setlength{\stockwidth}{2\coverwidth+2\covertrimsize+\coverspinewidth}%
 \setlength{\stockheight}{\coverheight+2\covertrimsize}%
 
-\newlength{\authoroffset}
-\setlength{\authoroffset}{\coverwidth+\covertrimsize+\coverspinewidth+20mm}%
+\newlength{\frontcoverwidth}
+\setlength{\frontcoverwidth}{0.8\coverwidth}
+\newlength{\frontcoveroffset}
+\setlength{\frontcoveroffset}{\coverwidth+\covertrimsize+\coverspinewidth+0.1\coverwidth}%
 
-\newlength{\titlewidth}
-\setlength{\titlewidth}{\coverwidth-30mm}
-
-\newlength{\descwidth}
-\setlength{\descwidth}{0.66\coverwidth}
-\newlength{\descoffset}
-\setlength{\descoffset}{\covertrimsize+0.5\coverwidth-0.5\descwidth}
+\newlength{\backcoverwidth}
+\setlength{\backcoverwidth}{0.66\coverwidth}
+\newlength{\backcoveroffset}
+\setlength{\backcoveroffset}{\covertrimsize+0.5\coverwidth-0.5\backcoverwidth}
 
 \newlength{\spineoffset}
 \setlength{\spineoffset}{\coverwidth+\covertrimsize+0.5\coverspinewidth}%
@@ -33,27 +32,29 @@
 \usepackage{biolinum}
 % Allow using arbitrary font sizes.
 \usepackage{anyfontsize}
-% Prevent paragraph indents.
+% Prevent paragraph indenting.
 \setlength{\parindent}{0pt}
+
 % textpos allows arbitrary placement of text boxes.
 \usepackage[absolute,overlay]{textpos}
 % We need to rotate the spine text.
 \usepackage{rotating}
-% And set the text color.
+% And change the text colour.
 \usepackage{xcolor}
 
 \begin{document}
 	\color{white}%
 	\sffamily%
+	% Load the background image.
 	\begin{textblock*}{\paperwidth} (0mm, 0mm)
 		\scalebox{-1}[1]{\includegraphics[height=1.0\paperheight, keepaspectratio]{graphics/racim-amr-9uKUR7TwNpU-unsplash.jpg}}
 	\end{textblock*}
 
 	% Cover author and title.
-	\begin{textblock*}{\titlewidth} (\authoroffset, 50mm) % {block width} (coords)
+	\begin{textblock*}{\frontcoverwidth} (\frontcoveroffset, 50mm) % {block width} (coords)
 		\fontsize{28}{33}\selectfont%
 		John Dawson\par
-		\vspace{14em}%
+		\vspace{12em}%
 		\raggedleft%
 		\fontsize{44}{52}\selectfont%
 		\textbf{Forest Vines}\emph{ to}\par
@@ -73,7 +74,7 @@
 	\end{textblock*}
 
 	% Back cover.
-	\begin{textblock*}{\descwidth} (\descoffset, 40mm)
+	\begin{textblock*}{\backcoverwidth} (\backcoveroffset, 40mm)
 		\Large\centering%
 		\setlength{\parskip}{1em}%
 		Forest Vines to Snow Tussocks is the first general review of the distinctive features of New Zealand native plants since Cockayne's \emph{New Zealand Plants and their Story}, now long out of print.
@@ -89,4 +90,5 @@
 		\vspace{7em}%
 		{\small Cover photo by Racim Amr (https://unsplash.com/@therealracim)}
 	\end{textblock*}
+
 \end{document}
