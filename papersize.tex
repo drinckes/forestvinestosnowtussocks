@@ -1,0 +1,18 @@
+% Set paper sizes using custom lengths.
+% Publisher specific page sizes should be set here, and included into main.tex and cover.tex.
+\usepackage{calc}
+
+\newlength{\facewidth}
+\newlength{\faceheight}
+\setlength{\facewidth}{178mm}
+\setlength{\faceheight}{254mm}
+
+\newlength{\coverwidth}
+\newlength{\coverheight}
+\setlength{\coverwidth}{\facewidth+5mm}
+\setlength{\coverheight}{\faceheight+6mm}
+
+\newlength{\covertrimsize}
+\setlength{\covertrimsize}{15mm}
+\newlength{\coverspinewidth}
+\setlength{\coverspinewidth}{20.1mm}
