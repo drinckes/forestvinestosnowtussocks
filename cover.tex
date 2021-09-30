@@ -10,10 +10,10 @@
 \setlength{\stockheight}{\coverheight+2\covertrimsize}%
 
 \newlength{\authoroffset}
-\setlength{\authoroffset}{\coverwidth+\covertrimsize+\coverspinewidth+0.1\coverwidth}%
+\setlength{\authoroffset}{\coverwidth+\covertrimsize+\coverspinewidth+20mm}%
 
 \newlength{\titlewidth}
-\setlength{\titlewidth}{0.8\coverwidth}
+\setlength{\titlewidth}{\coverwidth-30mm}
 
 \newlength{\descwidth}
 \setlength{\descwidth}{0.66\coverwidth}
@@ -33,26 +33,24 @@
 \usepackage{biolinum}
 % Allow using arbitrary font sizes.
 \usepackage{anyfontsize}
-
-% Use tikz to place the background.
-\usepackage{tikz}
-\usetikzlibrary{calc}
+% Prevent paragraph indents.
+\setlength{\parindent}{0pt}
 % textpos allows arbitrary placement of text boxes.
 \usepackage[absolute,overlay]{textpos}
 % We need to rotate the spine text.
 \usepackage{rotating}
+% And set the text color.
+\usepackage{xcolor}
 
 \begin{document}
 	\color{white}%
 	\sffamily%
-	% Load the background image.
-	\begin{tikzpicture}[remember picture,overlay]
-		\node at (current page.center)
-		{\scalebox{-1}[1]{\includegraphics[height=1.0\paperheight, keepaspectratio]{graphics/racim-amr-9uKUR7TwNpU-unsplash.jpg}}};
-	\end{tikzpicture}
+	\begin{textblock*}{\paperwidth} (0mm, 0mm)
+		\scalebox{-1}[1]{\includegraphics[height=1.0\paperheight, keepaspectratio]{graphics/racim-amr-9uKUR7TwNpU-unsplash.jpg}}
+	\end{textblock*}
 
 	% Cover author and title.
-	\begin{textblock*}{0.9\coverwidth} (\authoroffset, 50mm) % {block width} (coords)
+	\begin{textblock*}{\titlewidth} (\authoroffset, 50mm) % {block width} (coords)
 		\fontsize{28}{33}\selectfont%
 		John Dawson\par
 		\vspace{14em}%
@@ -66,11 +64,11 @@
 	\end{textblock*}
 
 	% Spine title and author. Use a 1pt width and reduce the spine offset by about half the font size.
-	\begin{textblock*}{1pt} (\spineoffset-7pt, 50mm)
+	\begin{textblock*}{1pt} (\spineoffset-9pt, 50mm)
 		\centering%
 		\begin{rotate}{-90}
-			\fontsize{18}{18}\selectfont%
-			\textbf{Forest Vines to Snow Tussocks\hspace{11em}John Dawson}
+			\fontsize{22}{22}\selectfont%
+			Forest Vines to Snow Tussocks\hspace{8em}John Dawson
 		\end{rotate}
 	\end{textblock*}
 
@@ -88,7 +86,7 @@
 
 		\emph{Forest Vines to Snow Tussocks} fills an important gap in New Zealand's botanical literature — a fascinating and invaluable book for student and general reader alike.
 		
-		\vspace{10em}%
+		\vspace{7em}%
 		{\small Cover photo by Racim Amr (https://unsplash.com/@therealracim)}
 	\end{textblock*}
 \end{document}
