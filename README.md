@@ -40,3 +40,5 @@ You should be able to generate the book by running:
 latexmk main
 latexmk cover
 ```
+
+Use the `main` branch. The `publisher_*` branches are for edits specific to different online publishers - things like ISBN images, or different cover dimensions. Changes to the `main` branch will be integrated to these branches.
