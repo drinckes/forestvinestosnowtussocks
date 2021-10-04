@@ -11,7 +11,7 @@ It has been converted from the source in the [New Zealand Electronic Text Collec
 
 The aim is for a LaTeX conversion of the book, not a new book, so I've made few changes other than fixing some typos or scanos (e.g., *Nothojagus* has been replaced with *Nothofagus*), and expanding the scientific names in the text, so that it has *Nothfagus menziesii* instead of *N. menziesii*, and to use sub-entries in the index, with the genus as the top level.
 
-In addition, to aid readers from Aotearoa, Māori names for plants have been added where available.
+In addition, to aid readers from Aotearoa, Māori names for plants have been added.
 
 ## Contributing
 
@@ -34,11 +34,12 @@ Install [TeX Live](https://www.tug.org/texlive/). You may also need to separatel
 The fonts used in the text are [EB Garamond](https://www.ctan.org/pkg/ebgaramond) and
 [Biolinum](https://www.ctan.org/pkg/libertine).
 
-You should be able to generate the book by running:
+PDFs are automatically generated in the `pdf` directory.
+If you have made your own edits, you should be able to generate the book by running:
 
 ```shell
-latexmk main
-latexmk cover
+latexmk tex/cover
+latexmk tex/main
 ```
 
 Use the `main` branch. The `publisher_*` branches are for edits specific to different online publishers - things like ISBN images, or different cover dimensions. Changes to the `main` branch will be integrated to these branches.

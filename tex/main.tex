@@ -4,11 +4,16 @@
 \title{Forest Vines to Snow Tussocks: The Story of New Zealand Plants}
 \author{John Dawson}
 
+% Define paths to load files from.
+\makeatletter
+\def\input@path{{tex/}{tex/graphics}}
+\makeatother
+
 % PACKAGE SECTION
 % IMPORTANT PACKAGES
 %
 % Load the page sizes.
-\input{papersize}
+\input{papersize}% chktex 27
 %
 % Geometry - set the page size etc.
 \usepackage{geometry}
@@ -28,8 +33,6 @@
 \usepackage{biolinum}
 % Allow using arbitrary font sizes - needed for the title page
 \usepackage{anyfontsize}
-% Break the LaTeX source into multiple files.
-\usepackage{subfiles}
 
 % TEXT LAYOUT
 %
@@ -85,6 +88,7 @@
 % Allow forcing an image to appear on the next page, at the top for example.
 \usepackage{afterpage}
 % Get a side captioned figure (SCfigure) and set the caption style.
+% TODO(#59): Remove, causes problems with HTML and ebook conversions.
 \usepackage[outercaption]{sidecap}
 \sidecaptionvpos{figure}{t}
 \usepackage[font={footnotesize,it},labelfont=bf]{caption}
@@ -121,10 +125,10 @@
 \DefineBibliographyStrings{english}{%
 	bibliography = {References},
 }
-% Cited documents.
-\addbibresource{bibliography.bib}
+% Cited documents. \addbibresource doesn't use \input@path set above, grr.
+\addbibresource{tex/bibliography.bib}
 % Documents that aren't cited in the text but included as reference.
-\addbibresource{references.bib}
+\addbibresource{tex/references.bib}
 \nocite{allan1961, cockayne1928, cockayne1965, cooper1981, crookes1963,
 	given1981, heath1974, johns1983, mark1979, moore1970, moore1978, poole1979,
 	salmon1985, salmon1980, sampson1985}
@@ -155,16 +159,10 @@
 % MISC
 % Macros for typesetting the documentation
 \newcommand{\hairsp}{\hspace{1pt}}% hair space
-\newcommand{\hquad}{\hskip0.5em\relax}% half quad space
 \newcommand{\eg}[0]{\textit{e.\hairsp{}g.}\xspace}
 % Macro for the correct accent for Hawai'i
 \DeclareRobustCommand{\okina}{%
 	\raisebox{\dimexpr\fontcharht\font`A-\height}{\scalebox{0.8}{`}}%
-}
-% Force content to next left page. Use this to force content to face a chapter.
-\newcommand*\cleartoleftpage{%
-	\clearpage
-	\ifodd\value{page}\hbox{}\newpage\fi
 }
 
 %% END OF CONFIGURATION
@@ -195,7 +193,7 @@
 }
 \makeatother
 \clearpage
-\subfile{copyright}
+\input{copyright}% chktex 27
 \cleardoublepage%
 \renewcommand{\baselinestretch}{0.5}\normalsize%
 { % Dirty hack to prevent the toc uppercasing its header.
@@ -205,23 +203,22 @@
 \renewcommand{\baselinestretch}{1.0}\normalsize%
 \cleardoublepage%
 
-\subfile{preface}
+\input{preface}% chktex 27
 
 \mainmatter%
-\subfile{chapters/general_characteristics}
-\subfile{chapters/conifer_general}
-\subfile{chapters/conifer_vines}
-\subfile{chapters/conifer_patterns}
-\subfile{chapters/beech_forests}
-\subfile{chapters/shrubs}
-\subfile{chapters/open_habitats}
-\subfile{chapters/alpine_plants}
-\subfile{chapters/where_alpine}
-\subfile{chapters/outlying_islands}
-\subfile{chapters/other_lands}
-\subfile{chapters/plant_fossils}
+\input{ch1_general_characteristics}% chktex 27
+\input{ch2_conifer_general}% chktex 27
+\input{ch3_conifer_vines}% chktex 27
+\input{ch4_conifer_patterns}% chktex 27
+\input{ch5_beech_forests}% chktex 27
+\input{ch6_shrubs}% chktex 27
+\input{ch7_open_habitats}% chktex 27
+\input{ch8_alpine_plants}% chktex 27
+\input{ch9_where_alpine}% chktex 27
+\input{ch10_outlying_islands}% chktex 27
+\input{ch11_other_lands}% chktex 27
+\input{ch12_plant_fossils}% chktex 27
 
-% The back matter contains appendices, bibliographies, indices, glossaries, etc.
 \backmatter%
 { % Dirty hack to prevent the bibliography uppercasing its header.
 	\renewcommand{\MakeUppercase}[1]{#1}

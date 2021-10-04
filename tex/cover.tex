@@ -1,8 +1,11 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-
+% Define paths to load files from.
+\makeatletter
+\def\input@path{{tex/}{tex/graphics}}
+\makeatother
 % Load the page sizes.
-\input{papersize}
+\input{papersize}% chktex 27
 
 \newlength{\stockwidth}
 \newlength{\stockheight}
@@ -47,7 +50,7 @@
 	\sffamily%
 	% Load the background image.
 	\begin{textblock*}{\paperwidth} (0mm, 0mm)
-		\scalebox{-1}[1]{\includegraphics[height=1.0\paperheight, keepaspectratio]{graphics/racim-amr-9uKUR7TwNpU-unsplash.jpg}}
+		\scalebox{-1}[1]{\includegraphics[height=1.0\paperheight, keepaspectratio]{racim-amr-9uKUR7TwNpU-unsplash.jpg}}
 	\end{textblock*}
 
 	% Cover author and title.
