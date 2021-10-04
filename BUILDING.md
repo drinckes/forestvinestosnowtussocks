@@ -4,7 +4,7 @@ If you want the cover and content PDFs, you can use the files in the `pdf` direc
 
 If you've made changes, and you want to regenerate them, install tex live and then run:
 
-```
+```shell
 latexmk tex/cover
 latexmk tex/main
 ```
