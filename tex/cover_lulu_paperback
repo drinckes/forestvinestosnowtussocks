@@ -1,0 +1,33 @@
+% Generic 7x10" document cover.
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+% Set the dimensions.
+% (Width and height are the dimensions of the front, not front + spine + back.)
+\newlength{\coverwidth}
+\newlength{\coverheight}
+\setlength{\coverwidth}{178mm}
+\setlength{\coverheight}{254mm}
+\newlength{\covertrimsize}
+\setlength{\covertrimsize}{3.2mm}
+\newlength{\coverspinewidth}
+\setlength{\coverspinewidth}{16.41mm}
+
+% Some layouts include a ISBN graphic.
+\newcommand{\ISBNgraphic}{
+	\textblockcolor{white}
+	\begin{textblock*}{43.4mm} (\facewidth+\covertrimsize-65mm, \stockheight-35mm)
+		\centering%
+		\vspace{3mm}
+		\includegraphics[width=38mm, keepaspectratio]{graphics/isbn_lulu}
+		\vspace{3mm}
+	\end{textblock*}
+}
+
+% Define paths to load files from.
+\makeatletter
+\def\input@path{{tex/}{tex/graphics}}
+\makeatother
+% Include the main cover content.
+\input{cover_main}
