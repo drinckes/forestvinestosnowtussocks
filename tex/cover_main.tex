@@ -1,27 +1,27 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-% Define paths to load files from.
-\makeatletter
-\def\input@path{{tex/}{tex/graphics}}
-\makeatother
-% Load the page sizes.
-\input{papersize}% chktex 27
+% Do not build directly, use cover_generic.
+% Assumes the following lengths have been set:
+%   \coverwidth
+%   \coverheight
+%   \spinewidth
+%   \covertrimsize
 
+% Total dimensions of the cover.
+% Width = front + back + spine + trim.
+% Height = height + trim.
 \newlength{\stockwidth}
 \newlength{\stockheight}
 \setlength{\stockwidth}{2\coverwidth+2\covertrimsize+\coverspinewidth}%
 \setlength{\stockheight}{\coverheight+2\covertrimsize}%
 
-\newlength{\frontcoverwidth}
-\setlength{\frontcoverwidth}{0.8\coverwidth}
+% Horizontal offset to the title text box.
 \newlength{\frontcoveroffset}
 \setlength{\frontcoveroffset}{\coverwidth+\covertrimsize+\coverspinewidth+0.1\coverwidth}%
 
-\newlength{\backcoverwidth}
-\setlength{\backcoverwidth}{0.66\coverwidth}
+% Horizontal offset to the back cover text box.
 \newlength{\backcoveroffset}
 \setlength{\backcoveroffset}{\covertrimsize+0.5\coverwidth-0.5\backcoverwidth}
 
+% Horizontal offset to the spine text box.
 \newlength{\spineoffset}
 \setlength{\spineoffset}{\coverwidth+\covertrimsize+0.5\coverspinewidth}%
 
@@ -54,7 +54,7 @@
 	\end{textblock*}
 
 	% Cover author and title.
-	\begin{textblock*}{\frontcoverwidth} (\frontcoveroffset, 50mm) % {block width} (coords)
+	\begin{textblock*}{0.8\coverwidth} (\frontcoveroffset, 50mm) % {block width} (coords)
 		\fontsize{28}{33}\selectfont%
 		John Dawson\par
 		\vspace{12em}%
@@ -77,7 +77,7 @@
 	\end{textblock*}
 
 	% Back cover.
-	\begin{textblock*}{\backcoverwidth} (\backcoveroffset, 40mm)
+	\begin{textblock*}{0.66\coverwidth} (\backcoveroffset, 40mm)
 		\Large\centering%
 		\setlength{\parskip}{1em}%
 		Forest Vines to Snow Tussocks is the first general review of the distinctive features of New Zealand native plants since Cockayne's \emph{New Zealand Plants and their Story}, now long out of print.
