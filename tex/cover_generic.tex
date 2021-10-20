@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+% Set the dimensions of the cover.
+% (Width and height are the dimensions of the front, not front + spine + back.)
+\newlength{\coverwidth}
+\newlength{\coverheight}
+\setlength{\coverwidth}{178mm}
+\setlength{\coverheight}{254mm}
+\newlength{\covertrimsize}
+\setlength{\covertrimsize}{10mm}
+\newlength{\coverspinewidth}
+\setlength{\coverspinewidth}{15mm}
+
+% Some layouts include a ISBN graphic on the back cover.
+\newcommand{\ISBNgraphic}{}
+
+% Define paths to load files from.
+\makeatletter
+\def\input@path{{tex/}{tex/graphics}}
+\makeatother
+\input{cover_main}
+
+\end{document}
