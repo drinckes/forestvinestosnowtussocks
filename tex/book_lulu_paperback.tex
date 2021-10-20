@@ -1,0 +1,15 @@
+% Book content for lulu.com paperback version.
+% No change to page size, but includes an ISBN graphic on the copyright page.
+
+\documentclass[11pt]{book}
+
+% Set the page dimensions.
+\newlength{\facewidth}
+\newlength{\faceheight}
+\setlength{\facewidth}{178mm}
+\setlength{\faceheight}{254mm}
+
+% Some versions need to include an ISBN graphic.
+\newcommand{\ISBNgraphic}{\includegraphics[width=38mm, keepaspectratio]{graphics/isbn_lulu}}
+
+\input{book_main}
