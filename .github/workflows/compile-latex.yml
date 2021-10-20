@@ -25,10 +25,10 @@ jobs:
       uses: xu-cheng/latex-action@v2
       with:
         root_file: |
-          tex/cover.tex
-          tex/main.tex
+          tex/cover_generic.tex
+          tex/book_generic.tex
     - name: Move generated PDF files into pdf/
-      run: mkdir -p pdf && mv cover.pdf main.pdf pdf/
+      run: mkdir -p pdf && mv cover_generic.pdf book_generic.pdf pdf/
     # Upload generated PDFs to repo.
     - name: Commit cover and main PDFs to repo
       uses: github-actions-x/commit@v2.8
@@ -37,6 +37,6 @@ jobs:
         commit-message: 'automatically updated by workflow action'
         push-branch: 'main'
         force-add: 'true'
-        files: pdf/cover.pdf pdf/main.pdf
+        files: pdf/cover_generic.pdf pdf/book_generic.pdf
         name: 'auto'
         email: 'noreply@noreply.org'
