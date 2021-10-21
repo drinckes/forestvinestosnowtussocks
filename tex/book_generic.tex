@@ -11,4 +11,10 @@
 % Some versions need to include an ISBN graphic.
 \newcommand{\ISBNgraphic}{}
 
+% Define paths to load files from.
+\makeatletter
+\def\input@path{{tex/}{tex/graphics}}
+\makeatother
+
+% Include the main book content.
 \input{book_main}% chktex 27
