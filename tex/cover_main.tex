@@ -1,9 +1,9 @@
 % Do not build directly, use cover_generic.
 % Assumes the following lengths have been set:
-%   \coverwidth
-%   \coverheight
+%   \facewidth
+%   \faceheight
 %   \spinewidth
-%   \covertrimsize
+%   \trimsize
 
 % Total dimensions of the cover.
 % Width = front + back + spine + trim.
@@ -11,22 +11,22 @@
 \usepackage{calc}
 \newlength{\stockwidth}
 \newlength{\stockheight}
-\setlength{\stockwidth}{2\coverwidth+2\covertrimsize+\coverspinewidth}%
-\setlength{\stockheight}{\coverheight+2\covertrimsize}%
+\setlength{\stockwidth}{2\facewidth+2\trimsize+\spinewidth}%
+\setlength{\stockheight}{\faceheight+2\trimsize}%
 
 % Horizontal offset to the title text box.
-\newlength{\frontcoveroffset}
-\setlength{\frontcoveroffset}{\coverwidth+\covertrimsize+\coverspinewidth+0.1\coverwidth}%
+\newlength{\titleoffset}
+\setlength{\titleoffset}{\facewidth+\trimsize+\spinewidth+0.1\facewidth}%
 
 % Horizontal offset to the back cover text box.
-\newlength{\backcoverwidth}
-\setlength{\backcoverwidth}{0.66\coverwidth}
-\newlength{\backcoveroffset}
-\setlength{\backcoveroffset}{\covertrimsize+0.5\coverwidth-0.5\backcoverwidth}
+\newlength{\blurbwidth}
+\setlength{\blurbwidth}{0.66\facewidth}
+\newlength{\blurboffset}
+\setlength{\blurboffset}{\trimsize+0.5\facewidth-0.5\blurbwidth}
 
 % Horizontal offset to the spine text box.
 \newlength{\spineoffset}
-\setlength{\spineoffset}{\coverwidth+\covertrimsize+0.5\coverspinewidth}%
+\setlength{\spineoffset}{\facewidth+\trimsize+0.5\spinewidth}%
 
 \usepackage{geometry}
 \geometry{
@@ -64,7 +64,7 @@
 	\end{textblock*}
 
 	% Cover author and title.
-	\begin{textblock*}{0.8\coverwidth} (\frontcoveroffset, 50mm) % {block width} (coords)
+	\begin{textblock*}{0.8\facewidth} (\titleoffset, 50mm) % {block width} (coords)
 		\fontsize{28}{33}\selectfont%
 		John Dawson\par
 		\vspace{12em}%
@@ -87,7 +87,7 @@
 	\end{textblock*}
 
 	% Back cover.
-	\begin{textblock*}{\backcoverwidth} (\backcoveroffset, 40mm)
+	\begin{textblock*}{\blurbwidth} (\blurboffset, 40mm)
 		\Large\centering%
 		\setlength{\parskip}{1em}%
 		Forest Vines to Snow Tussocks is the first general review of the distinctive features of New Zealand native plants since Cockayne's \emph{New Zealand Plants and their Story}, now long out of print.
@@ -105,6 +105,6 @@
 	\end{textblock*}
 
 	% Load the ISBN graphic if defined.
-	\ISBNgraphic{}
+	\ISBNgraphic%
 
 \end{document}
