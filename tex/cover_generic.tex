@@ -1,0 +1,24 @@
+% Cover with generic (also suitable for KDP hardback) dimensions.
+\documentclass{article}
+
+% Set the dimensions.
+% (Width and height are the dimensions of the front, not front + spine + back.)
+\newlength{\facewidth}
+\newlength{\faceheight}
+\setlength{\facewidth}{182.8mm}
+\setlength{\faceheight}{260mm}
+\newlength{\trimsize}
+\setlength{\trimsize}{15mm}
+\newlength{\spinewidth}
+\setlength{\spinewidth}{19.67mm}
+
+% Define paths to load files from.
+\makeatletter
+\def\input@path{{tex/}{tex/graphics}}
+\makeatother
+
+% Some layouts include a ISBN graphic.
+\newcommand{\ISBNgraphic}{}
+
+% Include the main cover content.
+\input{cover_main}% chktex 27

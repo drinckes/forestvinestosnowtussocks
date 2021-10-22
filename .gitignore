@@ -1,20 +1,21 @@
 ## Output PDF file.
-cover.pdf
-main.pdf
+cover*.pdf
+book*.pdf
 
 ## Core latex/pdflatex auxiliary files:
+.*.lb
 *.aux
+*.cb
+*.cb2
+*.fls
+*.fmt
+*.fot
 *.lof
 *.log
 *.lot
-*.fls
+*.opf
 *.out
 *.toc
-*.fmt
-*.fot
-*.cb
-*.cb2
-.*.lb
 
 ## Intermediate documents:
 *.dvi

@@ -38,8 +38,8 @@ PDFs are automatically generated in the `pdf` directory.
 If you have made your own edits, you should be able to generate the book by running:
 
 ```shell
-latexmk tex/cover
-latexmk tex/main
+latexmk tex/cover_generic
+latexmk tex/book_generic
 ```
 
-Use the `main` branch. The `publisher_*` branches are for edits specific to different online publishers - things like ISBN images, or different cover dimensions. Changes to the `main` branch will be integrated to these branches.
+Publisher specific versions of the book and cover may also exist, such as `cover_lulu_paperback`. This is to make it easier to meet requirements such as different trim sizes, page dimensions, or ISBN graphics that may or may not have to be included.

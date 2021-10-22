@@ -1,0 +1,19 @@
+% Generic 7x10" book content.
+\documentclass[11pt]{book}
+
+% Set the page dimensions.
+\newlength{\facewidth}
+\newlength{\faceheight}
+\setlength{\facewidth}{178mm}
+\setlength{\faceheight}{254mm}
+
+% Define paths to load files from.
+\makeatletter
+\def\input@path{{tex/}{tex/graphics}}
+\makeatother
+
+% Some versions need to include an ISBN graphic.
+\newcommand{\ISBNgraphic}{}
+
+% Include the main book content.
+\input{book_main}% chktex 27
