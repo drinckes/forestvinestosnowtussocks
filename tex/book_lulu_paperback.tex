@@ -8,12 +8,12 @@
 \setlength{\facewidth}{178mm}
 \setlength{\faceheight}{254mm}
 
-% Some versions need to include an ISBN graphic.
-\newcommand{\ISBNgraphic}{\includegraphics[width=38mm, keepaspectratio]{graphics/isbn_lulu_paperback}}
-
 % Define paths to load files from.
 \makeatletter
 \def\input@path{{tex/}{tex/graphics}}
 \makeatother
+
+% Some versions need to include an ISBN graphic.
+\newcommand{\ISBNgraphic}{\includegraphics[width=38mm, keepaspectratio]{isbn_lulu_paperback}}
 
 \input{book_main}% chktex 27
