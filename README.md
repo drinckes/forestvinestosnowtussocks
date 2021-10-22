@@ -26,7 +26,7 @@ You are entirely free to use the PDFs, or generate your own, and print them.
 Alternatively, you can order copies from:
 
 * lulu
-    * A hardback copy is [available](https://www.lulu.com/en/us/shop/john-dawson-and-doug-rinckes/forest-vines-to-snow-tussocks/hardcover/product-mv8m9r.html)
+    * A hardback copy is [available](https://www.lulu.com/shop/john-dawson-and-doug-rinckes/forest-vines-to-snow-tussocks/hardcover/product-mv8m9r.html)
     * A paperback copy is coming soon 
 *  Amazon
     *  A hardback copy is available in the [US](https://www.amazon.com/dp/B09HFSMF5T), [UK](https://www.amazon.co.uk/dp/B09HFSMF5T), [DE](https://www.amazon.de/dp/B09HFSMF5T), [FR](https://www.amazon.fr/dp/B09HFSMF5T), [ES](https://www.amazon.es/dp/B09HFSMF5T), [IT](https://www.amazon.it/dp/B09HFSMF5T) stores.
