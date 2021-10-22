@@ -19,6 +19,36 @@ Contributions of corrections or additional information are welcomed. If you are 
 
 One thing that is badly needed is replacement images. The VUW scans are low-res and in some cases quite poor, so replacements are very welcome! (Note: the images do need to be copyright-free since the book needs to be CC-BY-SA compatible.)
 
+## Purchasing
+
+You are entirely free to use the PDFs, or generate your own, and print them.
+
+Alternatively, you can order copies from:
+
+* Hardback
+  * [lulu.com](https://www.lulu.com/shop/john-dawson-and-doug-rinckes/forest-vines-to-snow-tussocks/hardcover/product-mv8m9r.html)
+  * Amazon:
+    [US](https://www.amazon.com/dp/B09HFSMF5T),
+    [UK](https://www.amazon.co.uk/dp/B09HFSMF5T),
+    [DE](https://www.amazon.de/dp/B09HFSMF5T),
+    [FR](https://www.amazon.fr/dp/B09HFSMF5T),
+    [ES](https://www.amazon.es/dp/B09HFSMF5T),
+    [IT](https://www.amazon.it/dp/B09HFSMF5T)
+* Paperback
+  * lulu.com - coming soon
+  * Amazon:
+    [US](https://www.amazon.com/dp/B09HG54WGF),
+    [UK](https://www.amazon.co.uk/dp/B09HG54WGF),
+    [DE](https://www.amazon.de/dp/B09HG54WGF),
+    [FR](https://www.amazon.fr/dp/B09HG54WGF),
+    [ES](https://www.amazon.es/dp/B09HG54WGF),
+    [IT](https://www.amazon.it/dp/B09HG54WGF),
+    [JP](https://www.amazon.co.jp/dp/B09HG54WGF),
+    [CA](https://www.amazon.ca/dp/B09HG54WGF),
+    [AU](https://www.amazon.com.au/dp/B09HG54WGF)
+
+Note: When ordering from Amazon, make sure you buy a new copy, and check all the options. Amazon will list third-party sellers and they are _more expensive_.
+
 ## Workflows
 
 A GitHub action has been added to perform lint checks, and to build the cover and book PDFs (see the `out` directory).
