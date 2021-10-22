@@ -19,6 +19,17 @@ Contributions of corrections or additional information are welcomed. If you are 
 
 One thing that is badly needed is replacement images. The VUW scans are low-res and in some cases quite poor, so replacements are very welcome! (Note: the images do need to be copyright-free since the book needs to be CC-BY-SA compatible.)
 
+## Purchasing
+
+You are entirely free to use the PDFs, or generate your own, and print them.
+
+Alternatively, you can order copies from:
+
+*  Amazon
+  *  Hardback copies are available from the [US](https://kdp.amazon.com/amazon-dp-action/us/dualbookshelf.marketplacelink/B09HFSMF5T), [UK](https://kdp.amazon.com/amazon-dp-action/uk/dualbookshelf.marketplacelink/B09HFSMF5T), [DE](https://kdp.amazon.com/amazon-dp-action/de/dualbookshelf.marketplacelink/B09HFSMF5T), [FR](https://kdp.amazon.com/amazon-dp-action/fr/dualbookshelf.marketplacelink/B09HFSMF5T), [ES](https://kdp.amazon.com/amazon-dp-action/es/dualbookshelf.marketplacelink/B09HFSMF5T), [IT](https://kdp.amazon.com/amazon-dp-action/it/dualbookshelf.marketplacelink/B09HFSMF5T) stores.
+  * Paperback copies from [US](https://kdp.amazon.com/amazon-dp-action/us/dualbookshelf.marketplacelink/B09HG54WGF), [UK](https://kdp.amazon.com/amazon-dp-action/uk/dualbookshelf.marketplacelink/B09HG54WGF), [DE](https://kdp.amazon.com/amazon-dp-action/de/dualbookshelf.marketplacelink/B09HG54WGF), [FR](https://kdp.amazon.com/amazon-dp-action/fr/dualbookshelf.marketplacelink/B09HG54WGF), [ES](https://kdp.amazon.com/amazon-dp-action/es/dualbookshelf.marketplacelink/B09HG54WGF), [IT](https://kdp.amazon.com/amazon-dp-action/it/dualbookshelf.marketplacelink/B09HG54WGF), [JP](https://kdp.amazon.com/amazon-dp-action/it/dualbookshelf.marketplacelink/B09HG54WGF), [CA](https://kdp.amazon.com/amazon-dp-action/it/dualbookshelf.marketplacelink/B09HG54WGF), [AU](https://kdp.amazon.com/amazon-dp-action/it/dualbookshelf.marketplacelink/B09HG54WGF)
+  *  **Warning** Make sure you buy a new copy, and check all the options. Amazon will list third-party sellers and they appear to charge significantly more.
+
 ## Workflows
 
 A GitHub action has been added to perform lint checks, and to build the cover and book PDFs (see the `out` directory).

@@ -1,0 +1,33 @@
+% Cover for lulu.com paperback.
+\documentclass{article}
+
+% Set the dimensions.
+% (Width and height are the dimensions of the front, not front + spine + back.)
+\newlength{\facewidth}
+\newlength{\faceheight}
+\setlength{\facewidth}{181mm}
+\setlength{\faceheight}{260.4mm}
+% trimsize includes a 3/4 inch wrap allowance.
+\newlength{\trimsize}
+\setlength{\trimsize}{19.05mm}
+\newlength{\spinewidth}
+\setlength{\spinewidth}{22.22mm}
+
+% Define paths to load files from.
+\makeatletter
+\def\input@path{{tex/}{tex/graphics}}
+\makeatother
+
+% lulu.com requires an ISBN graphic on the back cover.
+\newcommand{\ISBNgraphic}{
+	\textblockcolor{white}
+	\begin{textblock*}{43.4mm} (\facewidth+\trimsize-65mm, \stockheight-2\trimsize-25mm)
+		\centering%
+		\vspace{3mm}
+		\includegraphics[width=38mm, keepaspectratio]{isbn_lulu_hardback}
+		\vspace{3mm}
+	\end{textblock*}
+}
+
+% Include the main cover content.
+\input{cover_main}% chktex 27

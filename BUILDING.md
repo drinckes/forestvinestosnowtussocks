@@ -16,14 +16,27 @@ This will create two files, `cover_generic.pdf` and `main_generic.pdf`.
 The generic versions use page and trim sizes appropriate for [KDP](https://kdp.amazon.com), since it doesn't have any other requirements.
 
 There are versions for [lulu](https://lulu.com), since it has slightly different trim and spine requirements, as well as needing an ISBN on the cover and copyright pages.
-This version can be built with:
+They can be built with:
 
 ```shell
 latexmk tex/cover_lulu_paperback
 latexmk tex/book_lulu_paperback
+latexmk tex/cover_lulu_hardback
+latexmk tex/book_lulu_hardback
 ```
 
-If any other custom versions are required (e.g., a lulu hardback), they will be supported the same way.
+If any other custom versions are required, they should be supported the same way.
+
+### ISBN graphics
+
+You may have the choice of getting an ISBN graphic as PNG, PDF or SVG.
+
+PNGs are typically low res, and PDFs might not have properly embedded fonts (lulu, I'm looking at you), causing problems when you upload the final cover or book PDF.
+
+Download as SVG and export it to a PNG.
+The final image size is about 38mm wide, roughly 1.5 inches, so make the image about 900 pixels wide (for 600 dpi).
+
+The `\includegraphics` command needs to set the width to 38mm.
 
 ## Creating ebook version
 
